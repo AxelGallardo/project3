@@ -1,0 +1,41 @@
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import * as Font from 'expo-font';
+
+const Header: React.FC = () => {
+    const [fontLoaded, setFontLoaded] = useState(false);
+
+    useEffect(() => {
+        const loadFont = async () => {
+            await Font.loadAsync({
+                'Alpaca': require('../Alpaca.ttf'),
+            });
+            setFontLoaded(true);
+        };
+        loadFont();
+    }, []);
+
+    if (!fontLoaded) {
+        return null; // o algún indicador de carga
+    }
+
+    return (
+        <View style={styles.header}>
+            <Text style={[styles.headerText, { fontFamily: 'Alpaca' }]}>Olimpochat</Text>
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    header: {
+        backgroundColor: 'blue',
+        padding: 20,
+        alignItems: 'center',
+    },
+    headerText: {
+        color: 'white',
+        fontSize: 20,
+    },
+});
+
+export default Header;

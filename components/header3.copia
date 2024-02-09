@@ -1,0 +1,47 @@
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import * as Font from 'expo-font';
+
+// Función asincrónica para cargar la fuente personalizada
+async function loadCustomFont() {
+    await Font.loadAsync({
+        'Alpaca': require('../assets/fonts/alpaca.ttf'), // Reemplaza 'alpaca.ttf' con el nombre de tu archivo de fuente
+    });
+}
+
+const Header = () => {
+    const [fontLoaded, setFontLoaded] = useState(false);
+
+    useEffect(() => {
+        loadCustomFont().then(() => {
+            setFontLoaded(true);
+        });
+    }, []);
+
+    // Si la fuente aún no se ha cargado, no renderizar el componente Header
+    if (!fontLoaded) {
+        return null;
+    }
+
+    // Una vez que la fuente está cargada, renderizar el componente Header
+    return (
+        <View style={styles.header}>
+            <Text style={styles.headerText}>Olimpo</Text>
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    header: {
+        backgroundColor: 'blue',
+        padding: 20,
+        alignItems: 'center',
+    },
+    headerText: {
+        color: 'white',
+        fontSize: 20,
+        fontFamily: 'Alpaca', // Utiliza el nombre de la fuente cargada
+    },
+});
+
+export default Header;

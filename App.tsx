@@ -1,29 +1,39 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import Header from './components/Header';
 import LinearGradient from 'react-native-linear-gradient';
+import Footer from './components/Footer';
+import Chat from './components/Chat';
+import Icon from 'react-native-vector-icons/MaterialIcons'; // Importa iconos de MaterialIcons
 
-const App: React.FC = () => {
+
+
+
+
+const App = () => {
   return (
     <LinearGradient
-      colors={['violet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']}
-      style={styles.container}
-    >
+
+      colors={['#540095', '#9B01CF', '#4B0082']} // Tonos de fucsia y morado
+
+      style={styles.container}>
       {/* Contenido de tu aplicación */}
-      <View style={styles.content}>
-        <Text>Hola, este es tu contenido.</Text>
+      <View style={styles.container}>
+        <Header />
+        <Chat />
+        <Footer />
       </View>
     </LinearGradient>
   );
 };
 
+
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  content: {
-    // Estilos para tu contenido
   },
 });
 
