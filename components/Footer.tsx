@@ -7,22 +7,22 @@ import chatIcon from '../images/chats.png';
 import walkIcon from '../images/paseo.png';
 import hearingIcon from '../images/susurros.png';
 
-const Footer = () => {
+const Footer = ({ changeContent }) => {
     return (
         <View style={styles.footer}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => changeContent('Chat')}>
                 <LinearGradient colors={['#9F05F2', '#550096']} style={styles.gradient}>
                     <Image source={chatIcon} style={styles.icon} />
                     <Text style={styles.buttonText}>Chat</Text>
                 </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => changeContent('Paseo')}>
                 <LinearGradient colors={['#9F05F2', '#550096']} style={styles.gradient}>
                     <Image source={walkIcon} style={styles.icon} />
                     <Text style={styles.buttonText}>Paseo</Text>
                 </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => changeContent('Susurros')}>
                 <LinearGradient colors={['#9F05F2', '#550096']} style={styles.gradient}>
                     <Image source={hearingIcon} style={styles.icon} />
                     <Text style={styles.buttonText}>Susurros</Text>
