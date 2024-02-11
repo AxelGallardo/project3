@@ -120,6 +120,8 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         paddingHorizontal: 15,
         marginRight: 10,
+        marginLeft: 10,
+        height: 50, // Establecer la misma altura que la entrada de texto
     },
     searchIcon: {
         width: 20,
