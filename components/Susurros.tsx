@@ -17,8 +17,8 @@ const Susurros = () => {
             <FlatList
                 data={messages}
                 renderItem={({ item }) => (
-                    <View style={item.sender === 'me' ? styles.myMessage : styles.otherMessage}>
-                        <Text style={styles.messageText}>{item.text}</Text>
+                    <View style={item.sender === 'me' ? [styles.myMessage, { backgroundColor: '#9c27b0' }] : styles.otherMessage}>
+                        <Text style={[styles.messageText, { color: 'white' }]}>{item.text}</Text>
                     </View>
                 )}
                 keyExtractor={(item, index) => index.toString()}
@@ -28,11 +28,12 @@ const Susurros = () => {
                     style={styles.textInput}
                     value={inputText}
                     onChangeText={setInputText}
-                    placeholder="Type a message..."
+                    placeholder="Susurra un mensaje..."
+                    placeholderTextColor="#D8A9FC" // Cambiar el color del texto del marcador de posición a blanco
                     multiline
                 />
-                <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
-                    <Text style={styles.sendButtonText}>Send</Text>
+                <TouchableOpacity style={styles.sendButtonContainer} onPress={sendMessage}>
+                    <Text style={styles.sendButtonText}>Enviar</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -45,7 +46,6 @@ const styles = StyleSheet.create({
     },
     myMessage: {
         alignSelf: 'flex-end',
-        backgroundColor: '#DCF8C6',
         borderRadius: 10,
         marginVertical: 5,
         marginRight: 10,
@@ -68,23 +68,26 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderTopWidth: 1,
-        borderTopColor: '#CCCCCC',
+        borderTopColor: 'transparent',
         paddingHorizontal: 10,
         paddingVertical: 5,
     },
     textInput: {
         flex: 1,
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#9c27b0', // Cambiar el color de fondo de la entrada de texto
         borderRadius: 20,
         paddingHorizontal: 15,
         paddingVertical: 10,
         marginRight: 10,
+        color: 'white', // Cambiar el color del texto a blanco
     },
-    sendButton: {
-        backgroundColor: '#007BFF',
+    sendButtonContainer: {
+        backgroundColor: '#3949ab',
         borderRadius: 20,
         paddingHorizontal: 20,
         paddingVertical: 10,
+        height: 49, // Establecer la misma altura que la entrada de texto
+        justifyContent: 'center',
     },
     sendButtonText: {
         color: '#FFFFFF',

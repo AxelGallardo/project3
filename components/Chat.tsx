@@ -6,7 +6,7 @@ const ChatList = () => {
     const [chats, setChats] = useState([
         {
             id: 1,
-            contact: 'John Doe',
+            contact: 'Axel Gallardo',
             lastMessage: 'Hello, helloHello, helloHello, hello',
             lastMessageTime: new Date(), // Incluye la hora de envío del mensaje
             unreadCount: 2,
@@ -14,7 +14,7 @@ const ChatList = () => {
         },
         {
             id: 2,
-            contact: 'Jane Smith',
+            contact: 'Lizbeth Silva',
             lastMessage: 'How are you?',
             lastMessageTime: new Date(Date.now() - 86400000), // Ejemplo de mensaje de un día antes
             unreadCount: 0,
@@ -22,7 +22,7 @@ const ChatList = () => {
         },
         {
             id: 3,
-            contact: 'Alice Johnson',
+            contact: 'Merlina Adams',
             lastMessage: 'Good morning, Good morning, Good morning',
             lastMessageTime: new Date(Date.now() - 172800000), // Ejemplo de mensaje de dos días antes
             unreadCount: 1,
@@ -91,7 +91,7 @@ const ChatList = () => {
                         value={searchText}
                         onChangeText={setSearchText}
                         placeholder="Buscar chats..."
-                        placeholderTextColor="#FFFFFF" // Cambiar el color del texto del marcador de posición a blanco
+                        placeholderTextColor="#D8A9FC" // Cambiar el color del texto del marcador de posición a blanco
                     />
                 </View>
             </View>
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     searchInputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#FF00FF',
+        backgroundColor: '#9c27b0',
         borderRadius: 20,
         paddingHorizontal: 15,
         marginRight: 10,
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
     searchInput: {
         flex: 1,
         color: '#FFFFFF',
+        fontSize: 16, // Tamaño de fuente aumentado
     },
     chatItem: {
         flexDirection: 'row',
@@ -165,13 +166,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     contactName: {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 5,
         color: '#FFFFFF', // Texto en blanco
     },
     lastMessage: {
-        fontSize: 16,
+        fontSize: 14,
         marginBottom: 2,
         flex: 1,
         color: '#FFFFFF', // Texto en blanco

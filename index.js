@@ -8,4 +8,4 @@ AppRegistry.registerComponent(appName, () => App);
 if (window.document) {
   const rootTag = document.getElementById('root') || document.getElementById('app') || document.getElementById('main');
   AppRegistry.runApplication(appName, { rootTag });
-},
+}
