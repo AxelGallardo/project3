@@ -30,7 +30,7 @@ const Susurros = () => {
                 renderItem={({ item }) => (
                     <View style={[styles.messageContainer, item.sender === 'me' ? styles.myMessage : styles.otherMessage]}>
                         <View style={[styles.messageBubble, item.sender === 'me' ? styles.myMessageBubble : styles.otherMessageBubble]}>
-                            <Text style={styles.messageText}>{item.text}</Text>
+                            <Text style={[styles.messageText, { color: item.sender === 'me' ? '#434754' : '#434754' }]}>{item.text}</Text>
                             <Text style={[styles.messageTime, item.sender === 'me' ? styles.myMessageTime : styles.otherMessageTime]}>{item.time}</Text>
                         </View>
                     </View>
@@ -87,12 +87,13 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 0,
     },
     messageText: {
-        fontSize: 16,
+        fontSize: 14,
     },
     messageTime: {
-        fontSize: 12,
+        fontSize: 10,
         marginLeft: 10,
         marginBottom: 5,
+        color: '#6B6F7D', // Cambiar el color del texto de la hora a rojo
     },
     myMessageTime: {
         alignSelf: 'flex-end',
