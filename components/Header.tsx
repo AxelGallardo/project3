@@ -17,7 +17,7 @@ const Header = () => {
         <View style={styles.header}>
 
             <View style={styles.olimpoContainer}>
-                <Text style={styles.headerText}>OlimpoChat</Text>
+                <Image source={require('../images/olimpochat.png')} style={styles.headerImage} />
             </View>
             <View style={styles.switchContainer}>
                 <Switch
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         flex: 1, // Modificado para ocupar espacio restante
         alignItems: 'flex-start', // Alineado hacia la izquierda
         justifyContent: 'flex-start', // Alineado hacia la izquierda
-        marginLeft: 15, // Ajuste del margen izquierdo
+        marginLeft: 0, // Ajuste del margen izquierdo
     },
     switchContainer: {
         flexDirection: 'column', // Cambiado a columna para apilar los elementos verticalmente
@@ -70,12 +70,9 @@ const styles = StyleSheet.create({
         marginTop: 0, // Agregado margen arriba para separar el texto del switch
         fontSize: 12, // Ajustado el tamaño de fuente
     },
-    headerText: {
-        color: 'white',
-
-        fontSize: 20,
-        textAlign: 'center',
-        fontWeight: 'bold',
+    headerImage: {
+        width: 150, // Ajusta el ancho de la imagen según sea necesario
+        height: 30, // Ajusta el alto de la imagen según sea necesario
     },
     settingsButton: {
         padding: 10,
